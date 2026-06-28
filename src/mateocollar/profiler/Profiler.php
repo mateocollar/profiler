@@ -84,8 +84,8 @@ class Profiler extends PluginBase{
 	    if(!self::has($name)){
 	        return false;
 	    }
-	    
-	    self::$logger((string) self::$entries[$name]);
+
+	    self::$logger->info((string) self::$entries[$name]);
 	    return true;
 	}
 	
@@ -100,7 +100,7 @@ class Profiler extends PluginBase{
 	        return false;
 	    }
 	
-		self::$logger->info($entry->toDetailedString());
+		self::$logger->info(self::$entries[$name]->toDetailedString());
 	    return true;
 	}
 	
